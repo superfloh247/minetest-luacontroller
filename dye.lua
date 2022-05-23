@@ -5,14 +5,15 @@ elseif (event.type == "interrupt" and event.iid == "don") then
     interrupt(0.5, "doff")
 elseif (event.type == "interrupt" and event.iid == "doff") then
     port.d = false
+    interrupt(2, "aon")
 elseif (event.type == "digiline" and event.msg.action == "tput") then
     digiline_send("LCD", event.msg.stack.name)
     if (event.msg.stack.name == "flowers:seaweed"
         or event.msg.stack.name == "farming:seed_wheat"
         or event.msg.stack.name == "algae:algae_thick"
         or event.msg.stack.name == "algae:algae_medium"
+        or event.msg.stack.name == "algae:algae_thin"
         or event.msg.stack.name == "farming:seed_oat"
-        or event.msg.stack.name == "beautiflowers:sonia"
         or event.msg.stack.name == "default:grass_1"
         or event.msg.stack.name == "default:grass_2"
         or event.msg.stack.name == "default:grass_3"
@@ -47,4 +48,6 @@ elseif (event.type == "interrupt" and event.iid == "aon") then
 elseif (event.type == "interrupt" and event.iid == "aoff") then
     port.a = false
     interrupt(0.5, "don")
+else
+    interrupt(10, "don")
 end

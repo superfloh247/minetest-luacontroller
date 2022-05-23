@@ -16,7 +16,7 @@ elseif (event.type == "on" and mem.producing == false) then
         name = "basic_materials:plastic_sheet",
         count = 28
     })
-    interrupt(8, "step2")
+    interrupt(10, "step2")
 
 elseif (event.type == "interrupt" and event.iid == "step2") then
     digiline_send("AC1", "off")
@@ -26,7 +26,7 @@ elseif (event.type == "interrupt" and event.iid == "step2") then
         { "basic_materials:plastic_sheet", "basic_materials:plastic_sheet", "basic_materials:plastic_sheet" }
     })
     digiline_send("AC1", "on")
-    interrupt(8, "step3")
+    interrupt(10, "step3")
 
 elseif (event.type == "interrupt" and event.iid == "step3") then
     digiline_send("iron_ingot", {
@@ -39,7 +39,7 @@ elseif (event.type == "interrupt" and event.iid == "step3") then
         slotseq = "priority",
         exmatch = true
     })
-    interrupt(10, "step4")
+    interrupt(12, "step4")
 
 elseif (event.type == "interrupt" and event.iid == "step4") then
     digiline_send("AC1", "off")
@@ -49,7 +49,7 @@ elseif (event.type == "interrupt" and event.iid == "step4") then
         { "e", "e", "e" }
     })
     digiline_send("AC1", "on")
-    interrupt(10, "step5")
+    interrupt(12, "step5")
 
 elseif (event.type == "interrupt" and event.iid == "step5") then
     digiline_send("iron_ingot", {
@@ -62,7 +62,7 @@ elseif (event.type == "interrupt" and event.iid == "step5") then
         slotseq = "priority",
         exmatch = true
     })
-    interrupt(10, "step6")
+    interrupt(12, "step6")
 
 elseif (event.type == "interrupt" and event.iid == "step6") then
     digiline_send("AC1", "off")
@@ -72,7 +72,7 @@ elseif (event.type == "interrupt" and event.iid == "step6") then
         { "basic_materials:steel_wire", "basic_materials:steel_wire", "default:steel_ingot" }
     })
     digiline_send("AC1", "on")
-    interrupt(5, "step7")
+    interrupt(10, "step7")
 
 elseif (event.type == "interrupt" and event.iid == "step7") then
     digiline_send("final1", {
